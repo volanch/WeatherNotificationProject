@@ -1,16 +1,14 @@
 package org.example.weathernotificationproject.Strategy.ConcreteStrategies;
 
+import lombok.Setter;
 import org.example.weathernotificationproject.Strategy.StrategyInterface.UpdateStrategy;
 import org.example.weathernotificationproject.WeatherData;
 import org.springframework.stereotype.Component;
 
+@Setter
 @Component
 public class ManualUpdateStrategy implements UpdateStrategy {
     private WeatherData manualData;
-
-    public void setManualData(WeatherData manualData) {
-        this.manualData = manualData;
-    }
 
     @Override
     public WeatherData update(String city) {
