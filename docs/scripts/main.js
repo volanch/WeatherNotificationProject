@@ -88,7 +88,6 @@ $(function () {
             return;
         }
 
-        // Build weather message
         const data = window.currentWeather;
         const message = `
 City: ${data.city}
