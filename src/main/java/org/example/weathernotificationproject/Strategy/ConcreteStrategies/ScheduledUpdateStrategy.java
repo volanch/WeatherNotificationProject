@@ -50,6 +50,7 @@ public class ScheduledUpdateStrategy {
         int currentMinute = LocalDateTime.now().getMinute();
         LocalDateTime combinedTime = apiDateTime.withMinute(currentMinute);
         String newDate = combinedTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm"));
+
         double temperature = clamp(data.getTemperature() + (random.nextDouble() * 2 - 1), -40, 40);
         double apparentTemperature = clamp(data.getApparentTemperature() + (random.nextDouble() * 2 - 1), -40, temperature);
         double humidity = clamp(data.getHumidity() + (random.nextDouble() * 2 - 1), 0, 100);
