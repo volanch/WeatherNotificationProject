@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hourly Weather Updates</title>
+  <link rel="stylesheet" href="style/hourly-style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+  <div class="weather-app">
+    <h1>Hourly Weather Updates</h1>
+    <p>Enter a city to see hourly weather for the current day</p>
+
+    <div class="weather-input">
+      <input type="text" id="city" placeholder="Enter a city...">
+      <button id="fetchHourly">Get Hourly Weather</button>
+      <a id="back" href="index.html">Hourly Weather</a>
+    </div>
+
+    <table id="hourlyWeatherTable" class="weather-table" style="display:none;">
+      <thead>
+      <tr>
+        <th>Time</th>
+        <th>Temperature (°C)</th>
+        <th>Apparent Temp (°C)</th>
+        <th>Humidity (%)</th>
+        <th>Wind (km/h)</th>
+        <th>Precipitation (mm)</th>
+        <th>Rain (mm)</th>
+        <th>Weather Code</th>
+      </tr>
+      </thead>
+      <tbody id="hourlyWeather"></tbody>
+    </table>
+  </div>
+
+  <script src="scripts/hourly.js"></script>
+</body>
+</html>

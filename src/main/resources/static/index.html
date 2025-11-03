@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Live Weather Updates</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style/page-style.css">
+</head>
+<body>
+    <div class="weather-app">
+        <h1>Live Weather Updates</h1>
+        <p>Enter a city and receive automatic weather updates via WebSocket</p>
+
+        <div class="weather-input">
+            <input type="text" id="city" placeholder="Enter a city...">
+            <button id="connect">Connect</button>
+            <button id="disconnect" disabled>Disconnect</button>
+            <a id="hourly-btn" href="hourly.html">Hourly Weather</a>
+        </div>
+
+        <table id="conversation" class="weather-table" style="display:none;">
+            <thead>
+            <tr>
+                <th>Weather Info</th>
+            </tr>
+            </thead>
+            <tbody id="weather"></tbody>
+        </table>
+
+        <div class="notification">
+            <input type="text" id="recipient" placeholder="Enter email">
+            <select id="type">
+                <option value="gmail">Gmail</option>
+                <option value="outlook">Outlook</option>
+            </select>
+            <button id="sendNotification">Send Notification</button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@stomp/stompjs@7.0.0/bundles/stomp.umd.min.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
